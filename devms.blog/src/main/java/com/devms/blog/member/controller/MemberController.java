@@ -23,20 +23,15 @@ public class MemberController {
 	 */
 	@RequestMapping(value="/member/list")
 	public Iterable<Tn_member> selectAllMemberList(ModelMap modelMap, @ModelAttribute Tn_member vo) throws Exception{
+		
 		Iterable<Tn_member> memberList = null;
 		
-			try{
 					if(vo.getId() != null){
 						memberList = memberDAO.findById(vo.getId());
 					}else{
 						memberList = memberDAO.findAll();
 					}
 					
-
-			}catch(Exception e){
-				e.printStackTrace();
-			}
-
 			
 			return memberList;
 	}
@@ -47,9 +42,9 @@ public class MemberController {
 	 * @return
 	 */
 	@RequestMapping(value="/member/add")
-	public Tn_member insertMemberInfo(Tn_member vo){
+	public Tn_member insertMemberInfo(@ModelAttribute Tn_member vo){
 		
-			//Tn_member member = memberDAO.save(vo);
+			Tn_member member = memberDAO.save(vo);
 			
 			return vo;
 	}

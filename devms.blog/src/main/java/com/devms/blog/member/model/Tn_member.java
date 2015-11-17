@@ -8,7 +8,6 @@ import javax.persistence.NamedQuery;
 @Entity
 public class Tn_member {
 	@Id
-	@GeneratedValue
 	String id;
 	  
 	String name;
