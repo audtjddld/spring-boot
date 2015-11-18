@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devms.blog.member.model.Tn_member;
+import com.devms.blog.member.model.TN_Member;
 import com.devms.blog.member.repository.MemberDAO;
 
 
@@ -22,9 +22,9 @@ public class MemberController {
 	 * @return
 	 */
 	@RequestMapping(value="/member/list")
-	public Iterable<Tn_member> selectAllMemberList(ModelMap modelMap, @ModelAttribute Tn_member vo) throws Exception{
+	public Iterable<TN_Member> selectAllMemberList(ModelMap modelMap, @ModelAttribute TN_Member vo) throws Exception{
 		
-		Iterable<Tn_member> memberList = null;
+		Iterable<TN_Member> memberList = null;
 		
 					if(vo.getId() != null){
 						memberList = memberDAO.findById(vo.getId());
@@ -42,9 +42,9 @@ public class MemberController {
 	 * @return
 	 */
 	@RequestMapping(value="/member/add")
-	public Tn_member insertMemberInfo(@ModelAttribute Tn_member vo){
+	public TN_Member insertMemberInfo(@ModelAttribute TN_Member vo){
 		
-			Tn_member member = memberDAO.save(vo);
+			TN_Member member = memberDAO.save(vo);
 			
 			return vo;
 	}

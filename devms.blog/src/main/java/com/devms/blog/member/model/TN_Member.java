@@ -6,17 +6,17 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
 @Entity
-public class Tn_member {
+public class TN_Member {
 	@Id
-	String id;
+	private String id;
 	  
-	String name;
+	private String name;
 	   
-	String email;
+	private String email;
 	
-	String mobile;
+	private String mobile;
 	
-	String password;
+	private String password;
 
 	public String getId() {
 		return id;
